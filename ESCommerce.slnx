@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ESCommerce.Domain.Core/ESCommerce.Domain.Core.csproj" />
+    <Project Path="src/ESCommerce.Domain/ESCommerce.Domain.csproj" />
+  </Folder>
+  <Folder Name="/tests/" />
+</Solution>
