@@ -11,8 +11,12 @@ namespace ESCommerce.Domain.Products.Commands
         public async Task Handle(IDocumentSession session, CreateProductCommand command)
         {
             var stream = await session.Events.FetchForWriting<Product>(command.ProductId);
+            var product = stream.Aggregate;
 
-            stream.AppendOne(new ProductCreated(command.ProductName));
+            if (product!.IsValid(command.ProductName))
+                stream.AppendOne(new ProductCreated(command.ProductName));
+            else
+                stream.AppendOne(new ProductFailedToCreate(ProductFailedToCreate.FailReason.InvalidName));
         }
     }
 }

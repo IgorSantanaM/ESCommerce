@@ -26,5 +26,11 @@ namespace ESCommerce.Domain.Products
         {
             Variantions.Add(variationAdded.Variation);
         }
+
+        public bool IsValid(string name)
+        {
+            if(string.IsNullOrEmpty(Name)) return false;
+            return true;
+        }
     }
 }

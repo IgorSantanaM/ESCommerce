@@ -1,9 +1,10 @@
-﻿using ESCommerce.Domain.Exceptions;
+﻿using ESCommerce.Domain.Core.Model;
+using ESCommerce.Domain.Exceptions;
 using System.Reflection.Metadata.Ecma335;
 
 namespace ESCommerce.Domain.Boxes
 {
-    public record ShippingLabel(Carrier Carrier, string TrackingCode)
+    public record class ShippingLabel(Carrier Carrier, string TrackingCode)
     {
         public bool IsValid() =>
             Carrier switch

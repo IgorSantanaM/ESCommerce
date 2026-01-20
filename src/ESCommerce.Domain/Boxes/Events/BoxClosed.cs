@@ -11,7 +11,7 @@ namespace ESCommerce.Domain.Boxes.Events
         public enum FailReason
         {
             BoxAlreadySent = 0,
-            BoxIsNotValid = 1
+            BoxIsEmpty = 1
         }
     }
 }

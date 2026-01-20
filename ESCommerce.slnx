@@ -1,7 +1,7 @@
 <Solution>
   <Folder Name="/src/">
+    <Project Path="src/ESCommerce.CommandAPI/ESCommerce.CommandAPI.csproj" Id="e745c374-f662-4624-9593-e951a7724875" />
     <Project Path="src/ESCommerce.Domain.Core/ESCommerce.Domain.Core.csproj" />
     <Project Path="src/ESCommerce.Domain/ESCommerce.Domain.csproj" />
   </Folder>
-  <Folder Name="/tests/" />
 </Solution>
