@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ESCommerce.Domain.Products.Events
 {
-    public record VariationAdded(Variantion Variation);
+    public record VariationAdded(Variation Variation);
 
     public record FailedToAddVariation(FailedToAddVariation.FailReason Reason)
     {
