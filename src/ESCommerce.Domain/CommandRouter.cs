@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ESCommerce.Domain
 {
-    public class CommandRouter(IServiceProvider serviceProvider, IDocumentStore store)
+    public class CommandRouter(IServiceProvider serviceProvider, IDocumentStore store) 
     {
         public async Task HandleCommand(ICommand command)
         {

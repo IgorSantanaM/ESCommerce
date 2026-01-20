@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Boxes\Commands\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Marten" Version="8.18.0" />
   </ItemGroup>
 
