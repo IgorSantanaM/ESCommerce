@@ -10,7 +10,7 @@ namespace ESCommerce.Domain.Boxes
     public class Box : Entity<Guid>, IAggregateRoot
     {
         public int Capacity { get; set; }
-        public ICollection<int> ProductIds{ get; set; } = new List<int>();
+        public ICollection<Guid> ProductIds{ get; set; } = new List<Guid>();
         public ShippingLabel? ShippingLabel { get; set; }
         public bool IsClosed { get; set; }
         public bool IsSent { get; set; }

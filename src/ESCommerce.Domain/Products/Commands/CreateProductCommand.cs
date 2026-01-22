@@ -13,7 +13,7 @@ namespace ESCommerce.Domain.Products.Commands
             var stream = await session.Events.FetchForWriting<Product>(command.ProductId);
             var product = stream.Aggregate;
 
-            if (product!.IsValid(command.ProductName))
+            if (!string.IsNullOrEmpty(command.ProductName))
                 stream.AppendOne(new ProductCreated(command.ProductName));
             else
                 stream.AppendOne(new ProductFailedToCreate(ProductFailedToCreate.FailReason.InvalidName));

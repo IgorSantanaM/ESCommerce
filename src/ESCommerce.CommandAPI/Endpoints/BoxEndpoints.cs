@@ -2,8 +2,6 @@
 using ESCommerce.Domain;
 using ESCommerce.Domain.Boxes.Commands;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis.VisualBasic.Syntax;
-using System.Data.Common;
 
 namespace ESCommerce.CommandAPI.Endpoints
 {

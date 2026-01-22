@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ESCommerce.Domain.Boxes.Events
 {
-    public record ProductAdded(int ProductId);
+    public record ProductAdded(Guid ProductId);
 
     public record ProductFailedToAdd(ProductFailedToAdd.FailReason Reason)
     {
