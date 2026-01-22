@@ -5,7 +5,7 @@ using Marten;
 
 namespace ESCommerce.Domain.Boxes.Commands
 {
-    public record AddProductCommand(Guid BoxId, int ProductId) : ICommand;
+    public record AddProductCommand(Guid BoxId, Guid ProductId) : ICommand;
 
     public class AddProductCommandHandler() : ICommandHandler<AddProductCommand>
     {

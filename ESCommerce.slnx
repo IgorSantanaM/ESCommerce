@@ -3,5 +3,6 @@
     <Project Path="src/ESCommerce.CommandAPI/ESCommerce.CommandAPI.csproj" Id="e745c374-f662-4624-9593-e951a7724875" />
     <Project Path="src/ESCommerce.Domain.Core/ESCommerce.Domain.Core.csproj" />
     <Project Path="src/ESCommerce.Domain/ESCommerce.Domain.csproj" />
+    <Project Path="src/ESCommerce.QueryAPI/ESCommerce.QueryAPI.csproj" Id="087067f3-b637-4b66-b656-aa243ed8235d" />
   </Folder>
 </Solution>
