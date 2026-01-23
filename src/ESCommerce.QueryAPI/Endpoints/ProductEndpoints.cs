@@ -14,7 +14,13 @@ namespace ESCommerce.QueryAPI.Endpoints
             var group = app.MapGroup("/api/products/query");
 
             group.MapGet("/{productId:guid}", HandleGetProductById);
+
+            group.MapGet("/", HandleGetAllProducts);
+
+            group.MapGet("/{productId:guid}/sequence/{sequence:int}", HandleGetProductBySequence);
         }
+
+        
 
         #region Handlers
 
@@ -23,8 +29,30 @@ namespace ESCommerce.QueryAPI.Endpoints
             await using var session = store.QuerySession();
 
             var product = await session.Events.AggregateStreamAsync<Product>(productId);
+            if(product is null)
+                return Results.NotFound(productId);
+
             return Results.Ok(product);
         }
+
+        private async static Task<IResult> HandleGetAllProducts([FromServices] IDocumentStore store)
+        {
+            await using var session = store.QuerySession();
+
+            var products = session.Query<Product>();
+
+            return Results.Ok(products);
+        }
+
+        private async static Task<IResult> HandleGetProductBySequence([FromRoute] int sequence,[FromRoute] Guid productId, [FromServices] IDocumentStore store)
+        {
+            await using var session = store.QuerySession();
+
+            var product = session.Events.AggregateStreamAsync<Product>(productId, version: sequence);  
+            
+            return Results.Ok(product);    
+        }
+
         #endregion
     }
 }
