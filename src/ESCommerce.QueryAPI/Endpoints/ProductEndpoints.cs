@@ -20,8 +20,6 @@ namespace ESCommerce.QueryAPI.Endpoints
             group.MapGet("/{productId:guid}/sequence/{sequence:int}", HandleGetProductBySequence);
         }
 
-        
-
         #region Handlers
 
         private async static Task<IResult> HandleGetProductById([FromRoute] Guid productId, [FromServices] IDocumentStore store)
